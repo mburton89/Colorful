@@ -7,11 +7,13 @@ public class DialogueSentence
 {
     public enum FireWallCharacter
     {
-        Vlad,
-        SALLI,
-        Det,
-        HectorA,
-        SpiderQueen
+        RedNymph,
+        YellowNymph,
+        GreenNymph,
+        BlueNymph,
+        PurpleNymph,
+        BlackNymph,
+        Nomad
     }
 
     public FireWallCharacter characterSpeaking;

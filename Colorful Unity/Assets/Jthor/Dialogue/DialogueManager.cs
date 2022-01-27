@@ -102,32 +102,41 @@ public class DialogueManager : MonoBehaviour
             _currentPortrait.gameObject.SetActive(false);
         }
 
-        if (characterSpeaking == DialogueSentence.FireWallCharacter.SALLI)
+        if (characterSpeaking == DialogueSentence.FireWallCharacter.RedNymph)
         {
-            _currentName = "S.A.L.L.I.";
+            _currentName = "Red Nymph";
             _currentPortrait = _salliPortrait;
         }
-        else if (characterSpeaking == DialogueSentence.FireWallCharacter.Vlad)
+        else if (characterSpeaking == DialogueSentence.FireWallCharacter.YellowNymph)
         {
-            _currentName = "Vlad";
+            _currentName = "Yellow Nymph";
             _currentPortrait = _vladPortrait;
         }
-        else if (characterSpeaking == DialogueSentence.FireWallCharacter.Det)
+        else if (characterSpeaking == DialogueSentence.FireWallCharacter.GreenNymph)
         {
-            _currentName = "Detective Det";
+            _currentName = "Green Nymph";
             _currentPortrait = _detPortrait;
         }
-        else if (characterSpeaking == DialogueSentence.FireWallCharacter.HectorA)
+        else if (characterSpeaking == DialogueSentence.FireWallCharacter.BlueNymph)
         {
-            _currentName = "Hector A";
+            _currentName = "Blue Nymph";
             _currentPortrait = _hectorPortrait;
         }
-        else if (characterSpeaking == DialogueSentence.FireWallCharacter.SpiderQueen)
+        else if (characterSpeaking == DialogueSentence.FireWallCharacter.PurpleNymph)
         {
-            _currentName = "Spider Queen";
+            _currentName = "Purple Nymph";
             _currentPortrait = _spiderQueenPortrait;
         }
-
+        else if (characterSpeaking == DialogueSentence.FireWallCharacter.BlackNymph)
+        {
+            _currentName = "Black Nymph";
+            _currentPortrait = _spiderQueenPortrait;
+        }
+        else if (characterSpeaking == DialogueSentence.FireWallCharacter.Nomad)
+        {
+            _currentName = "Nomad";
+            _currentPortrait = _spiderQueenPortrait;
+        }
         nameText.text = _currentName;
         _currentPortrait.gameObject.SetActive(true);
         _currentPortrait.Play();
