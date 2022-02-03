@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ColorChanger : MonoBehaviour, IInteractable 
 {
-
+    public DialogueTrigger dialoguetrigger;
     Material mat;
 
     public void Start()
@@ -13,13 +13,13 @@ public class ColorChanger : MonoBehaviour, IInteractable
     }
     public string GetDescription()
     {
-        return "Change to a random color";
+        return "Get a hint";
 
     }
 
     public void Interact()
     {
-        mat.color = new Color(Random.value, Random.value, Random.value);
+        dialoguetrigger.TriggerDialogue();
 
     }
 

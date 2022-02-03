@@ -32,7 +32,7 @@ public class PlayerInteraction : MonoBehaviour
                 hitSomething = true;
                 interactionText.text = interactable.GetDescription();
 
-                if (Input.GetKeyDown(KeyCode.E))
+                if (!FindObjectOfType<DialogueManager>().hasStartedConvo && Input.GetKeyDown(KeyCode.E))
                 {
                     interactable.Interact();
 

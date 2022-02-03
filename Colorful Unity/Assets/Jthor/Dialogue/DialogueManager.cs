@@ -26,6 +26,7 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] private AudioSource audioSource;
 
+   public bool hasStartedConvo;
     private void Awake()
     {
         if (Instance == null)
@@ -43,14 +44,16 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (hasStartedConvo && Input.GetKeyDown(KeyCode.E))
         {
+        
             DisplayNextSentence();
         }
     }
 
     public void StartDialogue(Dialogue dialogue, List<Sprite> portraitSprites)
     {
+        hasStartedConvo = true;
         _dialogueBox.SetActive(true);
         sentences.Clear();
 
@@ -80,6 +83,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        hasStartedConvo = false;
         _salliPortrait.Stop();
         _dialogueBox.SetActive(false);
     }
