@@ -437,7 +437,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b1d90ca138da3bb4e89830103542fe37, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1244,34 +1244,6 @@ MonoBehaviour:
       sentence: Y'know, it really makes me mad how many barrels I go through. People
         keep smashing the heavy things for some reason! Ugh, the little brutes that
         come through here...
-    - characterSpeaking: 1
-      sentence: Hello there!!! Would you like to sing with me? I get sooo bored here!
-    - characterSpeaking: 1
-      sentence: '*Gasp*! YOU WILL!? YAY!'
-    - characterSpeaking: 1
-      sentence: Oh yeah! They passed by not too long ago, but don't worry too much,
-        little one! be positive!
-    - characterSpeaking: 2
-      sentence: H-Hello. *cough cough* ... I would have a fun remedy for you, but
-        I *cough* am not feeling well. Maybe you can get a remedy for me.. *cough*.
-    - characterSpeaking: 2
-      sentence: I feel better already... Thank you, little one. I wish I had more
-        to give you... Hm? Oh, they're long gone by now. But maybe it's better if
-        you don't rely on them so much.
-    - characterSpeaking: 3
-      sentence: Ugh. My clouds fell too low, and now I need to move them out of the
-        way... It's so unlike me to be so irresponsible. Perhaps you'd like to help
-        me get to the door?
-    - characterSpeaking: 3
-      sentence: Oh, hello again little one. I thought you all traveled together?
-        Separated? Shame. I trust that they won't begin their next travels without
-        you.
-    - characterSpeaking: 4
-      sentence: I can't believe we all misplaced our things... I don't know how we'll
-        ever be able to get them back...
-    - characterSpeaking: 4
-      sentence: Hm. Another one of you. Must be a busy initiation day for your group,
-        hm? Do you feel stronger? Smarter? Better? You should.
   portraitSprites:
   - {fileID: 21300000, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
   - {fileID: 21300002, guid: 45206a154e463804cb8ca14ad4ac4b1c, type: 3}
