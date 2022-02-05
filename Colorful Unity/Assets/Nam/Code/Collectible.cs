@@ -10,6 +10,7 @@ public abstract class Collectible : MonoBehaviour
         {
             Destroy(gameObject);
             GetCollected();
+            //Play sound
         }
     }
 
