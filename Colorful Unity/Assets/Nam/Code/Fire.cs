@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class Fire : MonoBehaviour
 {
-    //public AudioSource audioSource;
-    private void OnColliderEnter (Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            //audioSource.Play();
-            print("Fire!");
+               //Play Ouchie Sound
         }
     }
 }
-
