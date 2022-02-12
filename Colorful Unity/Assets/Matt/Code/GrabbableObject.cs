@@ -11,6 +11,10 @@ public  class GrabbableObject : MonoBehaviour
     private Vector3 _previousPosition;
     private Vector3 _currentPosition;
 
+    [SerializeField] GameObject objectToSpawn;
+
+    bool hasBeenFlung;
+
     public enum Type
     {
         barrel,
@@ -47,15 +51,22 @@ public  class GrabbableObject : MonoBehaviour
     {
         LetGo();
         _rb.AddForce((_controller.transform.forward + Vector3.up * 2) * throwForce);
+        hasBeenFlung = true;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "ground")
+        if (hasBeenFlung && (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Wall"))
         {
-            //resources explosion
-            //make sound
+            Instantiate(Resources.Load("Explosion") as GameObject, transform.position, transform.rotation, null);
+            //TODO make sound
             //spawn whatever object its holding (ie Axe)
+            if (objectToSpawn != null)
+            {
+                Instantiate(objectToSpawn, transform.position, transform.rotation, null);
+            }
+
+            Destroy(gameObject);
         }
     }
 }
