@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.24791497, g: 0.24742725, b: 0.24791497, a: 1}
+  m_IndirectSpecularColor: {r: 0.24793041, g: 0.24746129, b: 0.24793041, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12101,6 +12101,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1077983911374229611, guid: e60efd6625c06224eb429c432ff9bda0, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 2133529714232750698, guid: e60efd6625c06224eb429c432ff9bda0, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -12156,6 +12160,10 @@ PrefabInstance:
     - target: {fileID: 8854884943975050538, guid: e60efd6625c06224eb429c432ff9bda0, type: 3}
       propertyPath: m_Name
       value: BigWhiteRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056691215647990303, guid: e60efd6625c06224eb429c432ff9bda0, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e60efd6625c06224eb429c432ff9bda0, type: 3}
