@@ -22,6 +22,15 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player" && canTrigger)
+        {
+            TriggerDialogue();
+            canTrigger = false;
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         //if (collision.tag == "Player")
@@ -32,6 +41,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
+        print("yoyo");
         DialogueManager.Instance.StartDialogue(diaglogue, portraitSprites);
     }
 
