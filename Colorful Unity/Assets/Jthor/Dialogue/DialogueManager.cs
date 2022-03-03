@@ -26,7 +26,9 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] private AudioSource audioSource;
 
-   public bool hasStartedConvo;
+    public bool hasStartedConvo;
+    public bool canStartConvo;
+
     private void Awake()
     {
         if (Instance == null)
@@ -44,10 +46,17 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (hasStartedConvo && Input.GetKeyDown(KeyCode.E))
+
+        if (canStartConvo && Input.GetKeyDown(KeyCode.E))
         {
-        
-            DisplayNextSentence();
+            if (!hasStartedConvo)
+            {
+                FindObjectOfType<DialogueTrigger>().TriggerDialogue();
+            }
+            else
+            {
+                DisplayNextSentence();
+            }
         }
     }
 

@@ -8,31 +8,39 @@ public class DialogueTrigger : MonoBehaviour
     public List<Sprite> portraitSprites;
     [HideInInspector] public bool canTrigger;
 
+    public GameObject pressEBox;
+
     private void Awake()
     {
         canTrigger = true;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.tag == "Player" && canTrigger)
+        print("OnTriggerEnter");
+        if (other.tag == "Player" && canTrigger)
         {
-            TriggerDialogue();
-            canTrigger = false;
+            pressEBox.SetActive(true);
+            DialogueManager.Instance.canStartConvo = true;
+            //TriggerDialogue();
+            //canTrigger = false;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit(Collider other)
     {
-        //if (collision.tag == "Player")
-        //{
-        //    EndDialogue();
-        //}
+        print("OnTriggerExit");
+        if (other.tag == "Player")
+        {
+            pressEBox.SetActive(false);
+            DialogueManager.Instance.canStartConvo = false;
+        }
     }
 
     public void TriggerDialogue()
     {
         DialogueManager.Instance.StartDialogue(diaglogue, portraitSprites);
+        pressEBox.SetActive(false);
     }
 
     public void EndDialogue()
