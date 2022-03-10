@@ -9,6 +9,10 @@ public class Nomad : MonoBehaviour
     public GameObject axe;
     public bool canBreakDoor;
 
+    public Animator animator;
+
+    public AudioSource axeSwingSound;
+
     void Awake()
     {
         Instance = this;
@@ -24,9 +28,14 @@ public class Nomad : MonoBehaviour
 
     void SwingAxe()
     {
-        if (canBreakDoor && axe.activeInHierarchy)
+        if (axe.activeInHierarchy)
         {
-            FindObjectOfType<Door>().Open();
+            animator.Play("Axe Swing");
+            axeSwingSound.Play();
+            if (canBreakDoor && axe.activeInHierarchy)
+            {
+                FindObjectOfType<Door>().Open();
+            }
         }
     }
 }

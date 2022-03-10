@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager Instance;
 
     public TextMeshProUGUI nameText;
+    public TextMeshProUGUI nameText2;
     public TextMeshProUGUI dialogueText;
     private string _currentName;
 
@@ -151,6 +152,7 @@ public class DialogueManager : MonoBehaviour
             _currentPortrait = _spiderQueenPortrait;
         }
         nameText.text = _currentName;
+        nameText2.text = _currentName;
         _currentPortrait.gameObject.SetActive(true);
         _currentPortrait.Play();
     }
