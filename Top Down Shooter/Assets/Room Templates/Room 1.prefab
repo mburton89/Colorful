@@ -71,7 +71,7 @@ MonoBehaviour:
     DoorsList: []
   SimpleDoorModeData:
     DistanceFromCorners: 1
-    DoorLength: 1
+    DoorLength: 2
     Socket: {fileID: 0}
     Mode: 0
     VerticalDoors:
