@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class SimonManager : MonoBehaviour
 {
-
     public GameObject gameButtonPrefab;
 
     public List<ButtonSetting> buttonSettings;
