@@ -22,8 +22,6 @@ public class DialogueTrigger : MonoBehaviour
         {
             pressEBox.SetActive(true);
             DialogueManager.Instance.canStartConvo = true;
-            //TriggerDialogue();
-            //canTrigger = false;
         }
     }
 

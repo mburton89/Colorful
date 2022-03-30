@@ -26,7 +26,7 @@ public class PressurePlate : MonoBehaviour
         simonSaysHud.SetActive(true);
         particleSystem.startColor = simonColor;
         particleSystem.Play();
-        meshRenderer.material = lit;
+        meshRenderer.material = lit; 
         FindObjectOfType<DialogueTrigger>().TriggerDialogue();
     }
 
