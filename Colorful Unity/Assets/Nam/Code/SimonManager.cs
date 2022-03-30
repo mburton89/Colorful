@@ -99,6 +99,7 @@ public class SimonManager : MonoBehaviour
     {
         gameOver = true;
         inputEnabled = false;
+
     }
 
     IEnumerator SimonSays()
