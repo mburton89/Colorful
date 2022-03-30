@@ -12,20 +12,22 @@ public class ObjectGrabber : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (_potentialObject != null)
+            if (_grabbedObject == null)
             {
-                _grabbedObject = _potentialObject;
-                _grabbedObject.Grab(this);
+                if (_potentialObject != null)
+                {
+                    _grabbedObject = _potentialObject;
+                    _grabbedObject.Grab(this);
+                }
             }
-        }
-
-        else if (Input.GetKeyUp(KeyCode.E))
-        {
-            if (_grabbedObject != null)
+            else
             {
-                _grabbedObject.Fling(throwForce);
+                if (_grabbedObject != null)
+                {
+                    _grabbedObject.Fling(throwForce);
+                }
+                Reset();
             }
-            Reset();
         }
     }
 

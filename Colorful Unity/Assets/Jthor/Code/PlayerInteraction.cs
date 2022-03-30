@@ -8,7 +8,7 @@ public class PlayerInteraction : MonoBehaviour
     public Camera mainCam;
     public float interactionDistance = 2f;
 
-    public GameObject interactionUI;
+    //public GameObject interactionUI;
     public TextMeshProUGUI interactionText;
 
     private void Update()
@@ -40,6 +40,6 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
 
-        interactionUI.SetActive(hitSomething);
+        //interactionUI.SetActive(hitSomething);
     }
 }
