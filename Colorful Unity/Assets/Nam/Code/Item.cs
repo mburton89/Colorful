@@ -8,7 +8,10 @@ public class Item : Collectible
     {
         Axe,
         Thing1,
-        Thing2
+        Thing2,
+        Berry1,
+        Berry2,
+        Berry3 
     }
 
     public ItemType CurrentItemType;
@@ -30,6 +33,21 @@ public class Item : Collectible
             if (CurrentItemType == ItemType.Axe)
             {
                 Nomad.Instance.axe.SetActive(true);
+            }
+
+            if (CurrentItemType == ItemType.Berry1)
+            {
+                Nomad.Instance.berry1.SetActive(true);
+            }
+
+            if (CurrentItemType == ItemType.Berry2)
+            {
+                Nomad.Instance.berry2.SetActive(true);
+            }
+
+            if (CurrentItemType == ItemType.Berry3)
+            {
+                Nomad.Instance.berry3.SetActive.(true);
             }
         }
     }

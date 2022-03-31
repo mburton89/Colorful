@@ -7,6 +7,9 @@ public class Nomad : MonoBehaviour
     public static Nomad Instance;
 
     public GameObject axe;
+    public GameObject berry1;
+    public GameObject berry2;
+    public GameObject berry3;
     public bool canBreakDoor;
 
     public Animator animator;
@@ -37,5 +40,10 @@ public class Nomad : MonoBehaviour
                 FindObjectOfType<Door>().Open();
             }
         }
+    }
+
+    void PickupBerry()
+    {
+
     }
 }
