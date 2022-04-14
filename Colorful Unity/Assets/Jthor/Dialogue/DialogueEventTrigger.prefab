@@ -61,9 +61,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diaglogue:
-    name: TestPerson
     sentences:
-    - Hey, there.
-    - Does this work?
+    - characterSpeaking: 5
+      sentence: 
+    - characterSpeaking: 0
+      sentence: 
   portraitSprites:
   - {fileID: 21300000, guid: c75c205c99be91c48b36c83377604e96, type: 3}
+  canTrigger: 0
+  pressEBox: {fileID: 0}
