@@ -11,6 +11,7 @@ public class Nomad : MonoBehaviour
     public GameObject berry2;
     public GameObject berry3;
     public bool canBreakDoor;
+    
 
     public Animator animator;
 
@@ -44,6 +45,10 @@ public class Nomad : MonoBehaviour
 
     void PickupBerry()
     {
+        if(berry1.activeInHierarchy)
+        {
+
+        }
 
     }
 }
