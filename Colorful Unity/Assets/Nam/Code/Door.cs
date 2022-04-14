@@ -7,17 +7,37 @@ public class Door : MonoBehaviour
 {
     public float secondsToOpenDoor;
     public GameObject chain;
+    public bool testing;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
+        if (testing)
         {
-            Open();
-        }
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                Open();
+            }
 
-        if (Input.GetKeyDown(KeyCode.C))
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                Close();
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
         {
-            Close();
+            other.gameObject.GetComponent<Nomad>().canBreakDoor = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            other.gameObject.GetComponent<Nomad>().canBreakDoor = false;
         }
     }
 

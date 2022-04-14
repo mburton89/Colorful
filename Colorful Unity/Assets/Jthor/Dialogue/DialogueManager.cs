@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager Instance;
 
     public TextMeshProUGUI nameText;
+    public TextMeshProUGUI nameText2;
     public TextMeshProUGUI dialogueText;
     private string _currentName;
 
@@ -26,7 +27,9 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] private AudioSource audioSource;
 
-   public bool hasStartedConvo;
+    public bool hasStartedConvo;
+    public bool canStartConvo;
+
     private void Awake()
     {
         if (Instance == null)
@@ -44,10 +47,17 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (hasStartedConvo && Input.GetKeyDown(KeyCode.E))
+
+        if (canStartConvo && Input.GetKeyDown(KeyCode.E))
         {
-        
-            DisplayNextSentence();
+            if (!hasStartedConvo)
+            {
+                FindObjectOfType<DialogueTrigger>().TriggerDialogue();
+            }
+            else
+            {
+                DisplayNextSentence();
+            }
         }
     }
 
@@ -142,6 +152,7 @@ public class DialogueManager : MonoBehaviour
             _currentPortrait = _spiderQueenPortrait;
         }
         nameText.text = _currentName;
+        nameText2.text = _currentName;
         _currentPortrait.gameObject.SetActive(true);
         _currentPortrait.Play();
     }
