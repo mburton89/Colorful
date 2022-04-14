@@ -15,8 +15,12 @@ public class PressurePlate : MonoBehaviour
     [SerializeField] Material unlit;
     [SerializeField] Material lit;
 
+    SimonManager simonManager;
+
+
     void Start()
     {
+        simonManager = FindObjectOfType<SimonManager>();
         initialYPosition = transform.position.y;
     }
 
@@ -26,8 +30,10 @@ public class PressurePlate : MonoBehaviour
         simonSaysHud.SetActive(true);
         particleSystem.startColor = simonColor;
         particleSystem.Play();
-        meshRenderer.material = lit; 
-        FindObjectOfType<DialogueTrigger>().TriggerDialogue();
+        meshRenderer.material = lit;
+        //FindObjectOfType<DialogueTrigger>().TriggerDialogue();
+
+        simonManager.StartSimonSays();
     }
 
     private void OnTriggerExit(Collider other)
@@ -36,5 +42,6 @@ public class PressurePlate : MonoBehaviour
         simonSaysHud.SetActive(false);
         particleSystem.Stop();
         meshRenderer.material = unlit;
+        simonManager.Reset();
     }
 }

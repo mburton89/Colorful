@@ -38,7 +38,11 @@ public class DialogueTrigger : MonoBehaviour
     public void TriggerDialogue()
     {
         DialogueManager.Instance.StartDialogue(diaglogue, portraitSprites);
-        pressEBox.SetActive(false);
+
+        if (pressEBox != null)
+        {
+            pressEBox.SetActive(false);
+        }
     }
 
     public void EndDialogue()

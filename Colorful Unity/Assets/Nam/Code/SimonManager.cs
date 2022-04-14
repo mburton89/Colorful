@@ -15,7 +15,7 @@ public class SimonManager : MonoBehaviour
 
     List<GameObject> gameButtons;
     private System.Random randomNumberGen;
-    int bleepCount = 3;
+    int bleepCount = 2;
 
     List<int> bleeps;
     List<int> playerBleeps;
@@ -25,8 +25,23 @@ public class SimonManager : MonoBehaviour
     bool inputEnabled = false;
     bool gameOver = false;
 
-    void Start()
+    [SerializeField] GameObject container;
+
+    [SerializeField] List<LightMovement> stageLights;
+
+    [SerializeField] ParticleSystem particles;
+
+
+    public void Reset()
     {
+        print("Reset");
+        bleepCount = 2;
+    }
+
+    public void StartSimonSays()
+    {
+        container.SetActive(true);
+
         gameButtons = new List<GameObject>();
 
         randomNumberGen = new System.Random(DateTime.Now.Millisecond);
@@ -35,6 +50,7 @@ public class SimonManager : MonoBehaviour
         CreateGameButton(1, new Vector3(64, 64));
         CreateGameButton(2, new Vector3(-64, -64));
         CreateGameButton(3, new Vector3(64, -64));
+
 
         StartCoroutine(SimonSays());
     }
@@ -102,6 +118,17 @@ public class SimonManager : MonoBehaviour
 
     IEnumerator SimonSays()
     {
+        foreach (LightMovement stageLight in stageLights)
+        {
+            stageLight.MoveToPosition1();
+        }
+
+        if (bleepCount == 6)
+        {
+            FindObjectOfType<Door>().Open();
+            Destroy(gameObject);
+        }
+
         inputEnabled = false;
 
         var randomNumber = randomNumberGen;
@@ -115,7 +142,14 @@ public class SimonManager : MonoBehaviour
         {
             Bleep(bleeps[i]);
 
+            particles.Emit(1);
+
             yield return new WaitForSeconds(0.6f);
+        }
+
+        foreach (LightMovement stageLight in stageLights)
+        {
+            stageLight.MoveToPosition2();
         }
 
         inputEnabled = true;

@@ -11,6 +11,7 @@ public class ColorChanger : MonoBehaviour, IInteractable
     {
         mat = GetComponent<MeshRenderer>().material;
     }
+
     public string GetDescription()
     {
         return "Get a hint";
@@ -20,12 +21,5 @@ public class ColorChanger : MonoBehaviour, IInteractable
     public void Interact()
     {
         dialoguetrigger.TriggerDialogue();
-
     }
-
-
-
-
-
-
 }
