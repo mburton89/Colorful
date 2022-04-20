@@ -47,7 +47,7 @@ public class Item : Collectible
 
             if (CurrentItemType == ItemType.Berry3)
             {
-                Nomad.Instance.berry3.SetActive.(true);
+                Nomad.Instance.berry3.SetActive(true);
             }
         }
     }

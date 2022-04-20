@@ -17,6 +17,9 @@ public class Nomad : MonoBehaviour
 
     public AudioSource axeSwingSound;
 
+    public Transform hand;
+    public Holdable currentHoldable;
+
     void Awake()
     {
         Instance = this;
@@ -43,12 +46,28 @@ public class Nomad : MonoBehaviour
         }
     }
 
-    void PickupBerry()
+    public void PickupHoldable(Holdable objectToHold)
     {
-        if(berry1.activeInHierarchy)
+        if (currentHoldable == null)
         {
+            currentHoldable = objectToHold;
 
+            if (objectToHold.GetComponent<Rigidbody>())
+            {
+                objectToHold.GetComponent<Rigidbody>().isKinematic = true;
+            }
+
+            objectToHold.transform.SetParent(hand);
+            objectToHold.transform.localPosition = hand.localPosition;
         }
+    }
 
+    public void GiveHoldable()
+    {
+        if (currentHoldable != null)
+        {
+            Destroy(currentHoldable.gameObject);
+            currentHoldable = null;
+        }
     }
 }
