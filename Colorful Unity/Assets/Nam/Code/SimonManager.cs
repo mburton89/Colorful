@@ -29,8 +29,12 @@ public class SimonManager : MonoBehaviour
 
     [SerializeField] List<LightMovement> stageLights;
 
-    [SerializeField] ParticleSystem particles;
+    [SerializeField] ParticleSystem redParticles;
+    [SerializeField] ParticleSystem yellowParticles;
+    [SerializeField] ParticleSystem greenParticles;
+    [SerializeField] ParticleSystem blueParticles;
 
+    bool isPlayersTurn;
 
     public void Reset()
     {
@@ -118,6 +122,8 @@ public class SimonManager : MonoBehaviour
 
     IEnumerator SimonSays()
     {
+        isPlayersTurn = false;
+
         foreach (LightMovement stageLight in stageLights)
         {
             stageLight.MoveToPosition1();
@@ -142,8 +148,6 @@ public class SimonManager : MonoBehaviour
         {
             Bleep(bleeps[i]);
 
-            particles.Emit(1);
-
             yield return new WaitForSeconds(0.6f);
         }
 
@@ -154,6 +158,8 @@ public class SimonManager : MonoBehaviour
 
         inputEnabled = true;
 
+        isPlayersTurn = false;
+
         yield return null;
     }
 
@@ -163,6 +169,11 @@ public class SimonManager : MonoBehaviour
             gameButtons[index].GetComponent<Image>().color = color;
         });
 
+        if (!inputEnabled)
+        {
+            EmitColoredNote(index);
+        }
+
         LeanTween.value(gameButtons[index], buttonSettings[index].highlightColor, buttonSettings[index].normalColor, 0.25f)
             .setDelay(0.5f)
             .setOnUpdate((Color color) => {
@@ -170,6 +181,26 @@ public class SimonManager : MonoBehaviour
             });
 
         PlayAudio(index);
+    }
+
+    void EmitColoredNote(int index)
+    {
+        if (index == 0)
+        {
+            redParticles.Emit(1);
+        }
+        else if (index == 1)
+        {
+            yellowParticles.Emit(1);
+        }
+        else if (index == 2)
+        {
+            greenParticles.Emit(1);
+        }
+        else if (index == 3)
+        {
+            blueParticles.Emit(1);
+        }
     }
 
     void SetBleeps()

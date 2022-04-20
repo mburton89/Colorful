@@ -17,7 +17,6 @@ public class PressurePlate : MonoBehaviour
 
     SimonManager simonManager;
 
-
     void Start()
     {
         simonManager = FindObjectOfType<SimonManager>();
@@ -28,11 +27,7 @@ public class PressurePlate : MonoBehaviour
     {
         transform.position = new Vector3(transform.position.x, initialYPosition - distanceToMove, transform.position.z);
         simonSaysHud.SetActive(true);
-        particleSystem.startColor = simonColor;
-        particleSystem.Play();
         meshRenderer.material = lit;
-        //FindObjectOfType<DialogueTrigger>().TriggerDialogue();
-
         simonManager.StartSimonSays();
     }
 
@@ -40,7 +35,6 @@ public class PressurePlate : MonoBehaviour
     {
         transform.position = new Vector3(transform.position.x, initialYPosition, transform.position.z);
         simonSaysHud.SetActive(false);
-        particleSystem.Stop();
         meshRenderer.material = unlit;
         simonManager.Reset();
     }
