@@ -20,7 +20,10 @@ public class DialogueTrigger : MonoBehaviour
         print("OnTriggerEnter");
         if (other.tag == "Player" && canTrigger)
         {
-            pressEBox.SetActive(true);
+            if (pressEBox != null)
+            {
+                pressEBox.SetActive(true);
+            }
             DialogueManager.Instance.canStartConvo = true;
         }
     }

@@ -9,16 +9,17 @@ public class BerryReceiver : MonoBehaviour
         if (other.gameObject.GetComponent<Nomad>())
         {
             if (other.gameObject.GetComponent<Nomad>().currentHoldable != null)
-            {
+            {   
                 if (other.gameObject.GetComponent<Nomad>().currentHoldable.isWinningBerry)
                 {
                     print("Winner");
+                    FindObjectOfType<Door>().Open();
                 }
                 else
                 {
                     print("Wrong Berry!");
-                    other.gameObject.GetComponent<Nomad>().GiveHoldable();
                 }
+                other.gameObject.GetComponent<Nomad>().GiveHoldable();
             }
         }
     }
