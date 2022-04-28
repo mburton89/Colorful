@@ -41,7 +41,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<DialogueSentence>();
-        _dialogueBox.SetActive(false);
+        //_dialogueBox.SetActive(false);
         _next.onClick.AddListener(DisplayNextSentence);
     }
 
@@ -89,6 +89,17 @@ public class DialogueManager : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence.sentence));
         EstablishCharacter(sentence.characterSpeaking);
+    }
+
+    public void DisplaySentence(DialogueSentence.FireWallCharacter character, string newSentence)
+    {
+        _dialogueBox.SetActive(true);
+        DialogueSentence sentence = new DialogueSentence();
+        sentence.characterSpeaking = character;
+        sentence.sentence = newSentence;
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(sentence.sentence));
+        //EstablishCharacter(sentence.characterSpeaking);
     }
 
     public void EndDialogue()
