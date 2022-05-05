@@ -16,7 +16,7 @@ namespace MenteBacata.ScivoloCharacterController
         [Tooltip("If true, it uses a dedicated movement method for walking or in general for any movement on feet. In walk mode it can climb steps, clamps to floor and prevents climbing steep slope.")]
         public bool isInWalkMode = true;
 
-        [Range(25f, 75f)]
+        [Range(0f, 75f)]
         [Tooltip("Maximum angle a slope can have in order to be considered floor.")]
         public float maxFloorAngle = 45f;
 
@@ -97,7 +97,7 @@ namespace MenteBacata.ScivoloCharacterController
         
         private void Initialize(MoveContact[] moveContacts)
         {
-            maxFloorAngle = Mathf.Clamp(maxFloorAngle, 25f, 75f);
+            maxFloorAngle = Mathf.Clamp( maxFloorAngle, 0f, 75f);
             minFloorUp = Mathf.Cos(Mathf.Deg2Rad * maxFloorAngle);
             capsuleHeight = capsule.Height;
             capsuleRadius = capsule.Radius;

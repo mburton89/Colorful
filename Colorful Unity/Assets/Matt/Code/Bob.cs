@@ -7,6 +7,7 @@ public class Bob : MonoBehaviour
 {
     public float maxyPos;
     public float minyPos;
+    public float secondsToBob = 1;
 
     void Start()
     {
@@ -15,10 +16,10 @@ public class Bob : MonoBehaviour
 
     private IEnumerator BobCo()
     {
-        transform.DOMoveY(maxyPos, 1).SetEase(Ease.InOutQuad);
-        yield return new WaitForSeconds(1);
-        transform.DOMoveY(minyPos, 1).SetEase(Ease.InOutQuad);
-        yield return new WaitForSeconds(1);
+        transform.DOMoveY(maxyPos, secondsToBob).SetEase(Ease.InOutQuad);
+        yield return new WaitForSeconds(secondsToBob);
+        transform.DOMoveY(minyPos, secondsToBob).SetEase(Ease.InOutQuad);
+        yield return new WaitForSeconds(secondsToBob);
         StartCoroutine(BobCo());
     }
 }
