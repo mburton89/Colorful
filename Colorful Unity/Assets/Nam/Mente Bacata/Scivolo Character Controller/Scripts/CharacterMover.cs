@@ -340,8 +340,9 @@ namespace MenteBacata.ScivoloCharacterController
         {
             var surface = GetMovementSurface(contactNormal, upDirection, minFloorUp);
 
-            if (surface != MovementSurface.SteepSlope && surface != MovementSurface.Wall)
-                return false;
+
+             if (surface != MovementSurface.SteepSlope && surface != MovementSurface.Wall)
+                 return false;
 
             float contactHeightFromCapsuleBottom = Dot((contactPosition - position) - toCapsuleLowerCenter, upDirection) + capsuleRadius;
 
