@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Nam/Scenes/Main_Menu.unity
+    guid: 58a4602d9d04cd041aad625988256008
+  - enabled: 1
     path: Assets/Matt/Scenes/Red Level.unity
     guid: 6d5e6d64678ec624a895b8a4e8d9c37a
   - enabled: 1
@@ -14,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Matt/Scenes/GreenRoom.unity
     guid: 7b880e62121283a4ca7ee0c8dd4fb5e1
+  - enabled: 1
+    path: Assets/Matt/Scenes/PurpleRoom.unity
+    guid: fc39460205135f0498653230840e38c8
   m_configObjects: {}

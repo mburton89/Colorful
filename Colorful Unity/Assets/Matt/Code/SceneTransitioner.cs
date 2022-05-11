@@ -7,8 +7,8 @@ using DG.Tweening;
 
 public class SceneTransitioner : MonoBehaviour
 {
-    [SerializeField] int sceneToLoad;
-    [SerializeField] int secondsToWait;
+    //[SerializeField] int sceneToLoad;
+    [SerializeField] int secondsToWait = 1;
     [SerializeField] Image fadeImage;
 
     private void Start()
@@ -35,6 +35,6 @@ public class SceneTransitioner : MonoBehaviour
     {
         fadeImage.DOFade(1, secondsToWait);
         yield return new WaitForSeconds(secondsToWait);
-        SceneManager.LoadScene(secondsToWait);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
