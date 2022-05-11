@@ -17,6 +17,10 @@ public class PressurePlate : MonoBehaviour
 
     SimonManager simonManager;
 
+    [SerializeField] GameObject dialogueBox;
+    bool hasSeenDialogue;
+    bool hasStartedSimonSays;
+
     void Start()
     {
         simonManager = FindObjectOfType<SimonManager>();
@@ -26,16 +30,40 @@ public class PressurePlate : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         transform.position = new Vector3(transform.position.x, initialYPosition - distanceToMove, transform.position.z);
-        simonSaysHud.SetActive(true);
+        
         meshRenderer.material = lit;
-        simonManager.StartSimonSays();
+        simonManager.LightUpNymph();
+        StartCoroutine(ShowDialogue());
     }
 
     private void OnTriggerExit(Collider other)
     {
         transform.position = new Vector3(transform.position.x, initialYPosition, transform.position.z);
         simonSaysHud.SetActive(false);
+        hasStartedSimonSays = false;
         meshRenderer.material = unlit;
         simonManager.Reset();
+    }
+
+    private IEnumerator ShowDialogue()
+    {
+        if (!hasSeenDialogue)
+        {
+            dialogueBox.SetActive(true);
+            yield return new WaitForSeconds(4);
+        }
+        else
+        {
+            yield return new WaitForSeconds(0);
+        }
+        hasSeenDialogue = true;
+
+        if (!hasStartedSimonSays)
+        {
+            dialogueBox.SetActive(false);
+            simonSaysHud.SetActive(true);
+            simonManager.StartSimonSays();
+            hasStartedSimonSays = true;
+        }
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.2479493, g: 0.24747658, b: 0.2479493, a: 1}
+  m_IndirectSpecularColor: {r: 0.2479491, g: 0.24746087, b: 0.2479491, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10931,7 +10931,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!850595691 &679588636
@@ -11241,6 +11241,7 @@ MonoBehaviour:
   meshRenderer: {fileID: 795374165}
   unlit: {fileID: 2100000, guid: 8546751fa7f55114392cd27e501750cd, type: 2}
   lit: {fileID: 2100000, guid: c14833a0e8f386b44b4d8ea22aa4aee8, type: 2}
+  dialogueBox: {fileID: 0}
 --- !u!64 &795374164
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11760,6 +11761,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1241068012}
     m_Modifications:
+    - target: {fileID: 1303553547, guid: 0f7b7578e4eebe64eaca99c686affda1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303553550, guid: 0f7b7578e4eebe64eaca99c686affda1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 88aa7c22096cd6c43a93b20bbcc9a431, type: 3}
     - target: {fileID: 2644172001990264280, guid: 0f7b7578e4eebe64eaca99c686affda1, type: 3}
       propertyPath: m_fontColor.b
       value: 0
@@ -11938,7 +11947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2644172003222240042, guid: 0f7b7578e4eebe64eaca99c686affda1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -192.30002
+      value: -379.27
       objectReference: {fileID: 0}
     - target: {fileID: 2644172003222240042, guid: 0f7b7578e4eebe64eaca99c686affda1, type: 3}
       propertyPath: m_SizeDelta.y
@@ -11946,11 +11955,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2644172003222240042, guid: 0f7b7578e4eebe64eaca99c686affda1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 34.15001
+      value: -59.335007
       objectReference: {fileID: 0}
     - target: {fileID: 2644172003222240042, guid: 0f7b7578e4eebe64eaca99c686affda1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -22.50001
+      value: -22.500008
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644172003222240043, guid: 0f7b7578e4eebe64eaca99c686affda1, type: 3}
+      propertyPath: m_text
+      value: "\u201CHello there!!! Would you like to sing with me? I get sooo bored
+        here!\u201D"
       objectReference: {fileID: 0}
     - target: {fileID: 2644172003222240043, guid: 0f7b7578e4eebe64eaca99c686affda1, type: 3}
       propertyPath: m_fontSize
@@ -22826,6 +22840,7 @@ MonoBehaviour:
   meshRenderer: {fileID: 1404598753}
   unlit: {fileID: 2100000, guid: deb32a356bac86e47817b9b870d4a520, type: 2}
   lit: {fileID: 2100000, guid: ce758902433e70e4187c4a5619a389b1, type: 2}
+  dialogueBox: {fileID: 0}
 --- !u!64 &1404598752
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23213,6 +23228,7 @@ MonoBehaviour:
   meshRenderer: {fileID: 1571316985}
   unlit: {fileID: 2100000, guid: f4f95de3072226d46b8f32e31af032b7, type: 2}
   lit: {fileID: 2100000, guid: 6dfccc5cf934a594f9d2e928100f0fc4, type: 2}
+  dialogueBox: {fileID: 0}
 --- !u!64 &1571316984
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23460,6 +23476,7 @@ MonoBehaviour:
   meshRenderer: {fileID: 1648565293}
   unlit: {fileID: 2100000, guid: 0c10a3571a589644d9c61df946f9ee68, type: 2}
   lit: {fileID: 2100000, guid: 0bc1f5e545cded84484af29fb6c3357e, type: 2}
+  dialogueBox: {fileID: 0}
 --- !u!64 &1648565292
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23538,6 +23555,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1661580708 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2644172002046774715, guid: 0f7b7578e4eebe64eaca99c686affda1, type: 3}
+  m_PrefabInstance: {fileID: 1128957628}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1700313114
 GameObject:
   m_ObjectHideFlags: 0
@@ -23594,6 +23616,7 @@ MonoBehaviour:
   meshRenderer: {fileID: 0}
   unlit: {fileID: 0}
   lit: {fileID: 0}
+  dialogueBox: {fileID: 0}
 --- !u!64 &1700313117
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -30341,6 +30364,7 @@ MonoBehaviour:
   meshRenderer: {fileID: 0}
   unlit: {fileID: 0}
   lit: {fileID: 0}
+  dialogueBox: {fileID: 0}
 --- !u!64 &2094588914
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -33841,6 +33865,7 @@ MonoBehaviour:
   meshRenderer: {fileID: 8082985818412520790}
   unlit: {fileID: 2100000, guid: 8546751fa7f55114392cd27e501750cd, type: 2}
   lit: {fileID: 2100000, guid: c14833a0e8f386b44b4d8ea22aa4aee8, type: 2}
+  dialogueBox: {fileID: 1661580708}
 --- !u!54 &2142144662320766576
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34908,7 +34933,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9487d1029095406469345a31d7812cbf, type: 2}
+  - {fileID: 2100000, guid: 8546751fa7f55114392cd27e501750cd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -35225,7 +35250,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7ee7b7e232f34bf4ca28a2a822f91324, type: 2}
+  - {fileID: 2100000, guid: 8546751fa7f55114392cd27e501750cd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

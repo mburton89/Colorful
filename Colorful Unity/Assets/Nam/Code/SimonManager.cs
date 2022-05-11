@@ -215,4 +215,12 @@ public class SimonManager : MonoBehaviour
 
         bleepCount++;
     }
+
+    public void LightUpNymph()
+    {
+        foreach (LightMovement stageLight in stageLights)
+        {
+            stageLight.MoveToPosition1();
+        }
+    }
 }
