@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Matt/Scenes/PurpleRoom.unity
     guid: fc39460205135f0498653230840e38c8
+  - enabled: 1
+    path: Assets/Nam/Scenes/Main_Menu 1.unity
+    guid: ae194933cf468224a9ead091a74c1cff
   m_configObjects: {}

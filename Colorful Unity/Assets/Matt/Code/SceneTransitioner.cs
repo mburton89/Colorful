@@ -22,6 +22,7 @@ public class SceneTransitioner : MonoBehaviour
         GoToNexLevel();
         if (other.GetComponent<MenteBacata.ScivoloCharacterControllerDemo.SimpleCharacterController>())
         {
+            GoToNexLevel();
             other.GetComponent<MenteBacata.ScivoloCharacterControllerDemo.SimpleCharacterController>().gravity = 0;
         }
     }
