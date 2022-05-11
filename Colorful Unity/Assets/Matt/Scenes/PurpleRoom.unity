@@ -106082,7 +106082,7 @@ MonoBehaviour:
   canBreakDoor: 0
   animator: {fileID: 0}
   axeSwingSound: {fileID: 0}
-  hand: {fileID: 0}
+  hand: {fileID: 1994025174}
   currentHoldable: {fileID: 0}
 --- !u!81 &2135009676
 AudioListener:
