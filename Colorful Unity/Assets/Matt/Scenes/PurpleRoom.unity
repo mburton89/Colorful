@@ -12396,7 +12396,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c777997f3330738458252398e0de6f32, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 71071695211bde04f8babc31e1526fb1, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -45425,11 +45425,8 @@ MonoBehaviour:
   - normalColor: {r: 0, g: 0.19412665, b: 0.6603774, a: 1}
     highlightColor: {r: 0, g: 0.24753237, b: 1, a: 1}
   gameFieldPanelTransform: {fileID: 85819966}
-  container: {fileID: 575530209}
-  stageLights:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  container: {fileID: 0}
+  stageLights: []
   redParticles: {fileID: 0}
   yellowParticles: {fileID: 0}
   greenParticles: {fileID: 0}
@@ -97110,7 +97107,7 @@ MonoBehaviour:
   canBreakDoor: 0
   animator: {fileID: 0}
   axeSwingSound: {fileID: 0}
-  hand: {fileID: 1963068547}
+  hand: {fileID: 0}
   currentHoldable: {fileID: 0}
 --- !u!81 &1961213393
 AudioListener:
@@ -106085,7 +106082,7 @@ MonoBehaviour:
   canBreakDoor: 0
   animator: {fileID: 0}
   axeSwingSound: {fileID: 0}
-  hand: {fileID: 1994025174}
+  hand: {fileID: 0}
   currentHoldable: {fileID: 0}
 --- !u!81 &2135009676
 AudioListener:
